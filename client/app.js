@@ -3,7 +3,7 @@ const angular = require('angular');
 const app = angular
   .module('myApp', [
     'ngRoute',
-    'HomeController',
+    'Packafig.HomeController',
   ]);
 
 function configFunction($routeProvider) {
