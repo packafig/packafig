@@ -16,8 +16,9 @@ function configFunction($routeProvider) {
 
 app.config(configFunction);
 
-angular.module('coolName', [])
+angular.module('packafig', [])
 .controller('AppController', () => {
   this.entry;
-  this.output;
+  this.outputPath;
+  this.outputFilename;
 });
