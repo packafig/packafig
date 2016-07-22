@@ -16,39 +16,90 @@
 
   <link rel="stylesheet" href="styles/style.css">
 </head>
-<div ng-controller="AppController as appCtrl">
-
-  <form>
-    <p>
-      Entry file name:
-    </p>
-    <input type="text" ng-model="appCtrl.entry" />
-    <p>
-      Output path:
-    </p>
-    <input type="text" ng-model="appCtrl.outputPath" />
-    <p>
-      Output filename:
-    </p>
-    <input type="text" ng-model="appCtrl.outputFilename" />
-  </form>
-<!-- TODO: Use bootstrap to format  -->
-  <p>
-  module.exports: {
-      entry: {{ appCtrl.entry }},
-      output: {
-        path: {{ appCtrl.outputPath }},
-        filename: {{appCtrl.outputFilename}},
-      }
-      module: {
-        loaders: [
-          {
-            test: /\.css$/,
-            loader: 'style!css',
+<body>
+  <div class="container-fluid">
+    <div ng-controller="AppController as appCtrl">
+      <form>
+        <p>
+          Entry file name:
+        </p>
+        <input type="text" ng-model="appCtrl.entry" />
+        <p>
+          Output path:
+        </p>
+        <input type="text" ng-model="appCtrl.outputPath" />
+        <p>
+          Output filename:
+        </p>
+        <input type="text" ng-model="appCtrl.outputFilename" />
+      </form>
+      <!-- TODO: Use bootstrap to format  -->
+      <p>
+        module.exports: {
+          entry: {{ appCtrl.entry }},
+          output: {
+            path: {{ appCtrl.outputPath }},
+            filename: {{appCtrl.outputFilename}},
+          }
+          module: {
+            loaders: [
+            {
+              test: /\.css$/,
+              loader: 'style!css',
+            },
+            ],
           },
-        ],
-      },
-    }
-  </p>
+        }
+      </p>
 
+    </div>
+  </div>
+
+  <form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Form Name</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Text Input</label>
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+  <span class="help-block">help</span>
+  </div>
 </div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Text Input</label>
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+  <span class="help-block">help</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Text Input</label>
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+  <span class="help-block">help</span>
+  </div>
+</div>
+
+<!-- Select Multiple -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectmultiple">Select Multiple</label>
+  <div class="col-md-4">
+    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+      <option value="1">Option one</option>
+      <option value="2">Option two</option>
+    </select>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+</body>
