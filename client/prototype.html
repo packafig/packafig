@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+  <title> Packafig: Webpack Config File Builder</title>
+  <script type="text/javascript" src="./lib/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="./controllers/homeController.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="./lib/angular/angular.min.js"></script>
+
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<div ng-controller="AppController as appCtrl">
+
+  <form>
+    <p>
+      Entry file name:
+    </p>
+    <input type="text" ng-model="appCtrl.entry" />
+    <p>
+      Output path:
+    </p>
+    <input type="text" ng-model="appCtrl.outputPath" />
+    <p>
+      Output filename:
+    </p>
+    <input type="text" ng-model="appCtrl.outputFilename" />
+  </form>
+<!-- TODO: Use bootstrap to format  -->
+  <p>
+  module.exports: {
+      entry: {{ appCtrl.entry }},
+      output: {
+        path: {{ appCtrl.outputPath }},
+        filename: {{appCtrl.outputFilename}},
+      }
+      module: {
+        loaders: [
+          {
+            test: /\.css$/,
+            loader: 'style!css',
+          },
+        ],
+      },
+    }
+  </p>
+
+</div>
