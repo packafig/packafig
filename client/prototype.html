@@ -1,49 +1,105 @@
 <!DOCTYPE html>
 <head>
   <title> Packafig: Webpack Config File Builder</title>
+
   <script type="text/javascript" src="./lib/angular-route/angular-route.min.js"></script>
+
   <script type="text/javascript" src="./controllers/homeController.js"></script>
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" ref="bower_components/bootstrap/dist/css/bootstrap.css">
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+
+  <script src="bower_components/jquery/dist/js/bootstrap.js"></script>
 
   <script type="text/javascript" src="./lib/angular/angular.min.js"></script>
 
   <link rel="stylesheet" href="styles/style.css">
 </head>
-<div ng-controller="AppController as appCtrl">
-
-  <form>
-    <p>
-      Entry file name:
-    </p>
-    <input type="text" ng-model="appCtrl.entry" />
-    <p>
-      Output path:
-    </p>
-    <input type="text" ng-model="appCtrl.outputPath" />
-    <p>
-      Output filename:
-    </p>
-    <input type="text" ng-model="appCtrl.outputFilename" />
-  </form>
-<!-- TODO: Use bootstrap to format  -->
-  <p>
-  module.exports: {
-      entry: {{ appCtrl.entry }},
-      output: {
-        path: {{ appCtrl.outputPath }},
-        filename: {{appCtrl.outputFilename}},
-      }
-      module: {
-        loaders: [
-          {
-            test: /\.css$/,
-            loader: 'style!css',
+<body>
+  <div class="container-fluid">
+    <div ng-controller="AppController as appCtrl">
+      <form>
+        <p>
+          Entry file name:
+        </p>
+        <input type="text" ng-model="appCtrl.entry" />
+        <p>
+          Output path:
+        </p>
+        <input type="text" ng-model="appCtrl.outputPath" />
+        <p>
+          Output filename:
+        </p>
+        <input type="text" ng-model="appCtrl.outputFilename" />
+      </form>
+      <!-- TODO: Use bootstrap to format  -->
+      <p>
+        module.exports: {
+          entry: {{ appCtrl.entry }},
+          output: {
+            path: {{ appCtrl.outputPath }},
+            filename: {{appCtrl.outputFilename}},
+          }
+          module: {
+            loaders: [
+            {
+              test: /\.css$/,
+              loader: 'style!css',
+            },
+            ],
           },
-        ],
-      },
-    }
-  </p>
+        }
+      </p>
 
+    </div>
+  </div>
+
+  <form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Form Name</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Text Input</label>
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+  <span class="help-block">help</span>
+  </div>
 </div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Text Input</label>
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+  <span class="help-block">help</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Text Input</label>
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+  <span class="help-block">help</span>
+  </div>
+</div>
+
+<!-- Select Multiple -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectmultiple">Select Multiple</label>
+  <div class="col-md-4">
+    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+      <option value="1">Option one</option>
+      <option value="2">Option two</option>
+    </select>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+</body>

@@ -3,7 +3,7 @@ const angular = require('angular');
 const app = angular
   .module('myApp', [
     'ngRoute',
-    'HomeController',
+    'Packafig.HomeController',
   ]);
 
 function configFunction($routeProvider) {
@@ -17,7 +17,6 @@ function configFunction($routeProvider) {
 app.config(configFunction);
 
 angular.module('coolName', [])
-
 .controller('AppController', () => {
   this.entry;
   this.output;
