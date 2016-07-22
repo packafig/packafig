@@ -17,7 +17,6 @@ function configFunction($routeProvider) {
 app.config(configFunction);
 
 angular.module('coolName', [])
-
 .controller('AppController', () => {
   this.entry;
   this.output;
