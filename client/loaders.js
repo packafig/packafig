@@ -30,3 +30,7 @@ const loaders = {
     regEx: '/\.elm$/',
   },
 };
+
+loaderNames = Object.keys(loaders);
+
+module.exports(loaders, loaderNames);
