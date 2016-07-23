@@ -1,81 +1,13 @@
+@import 'https://fonts.googleapis.com/css?family=Questrial';
+
 body {
-  font-family: Arial, Helvetica, Sans-Serif;
-  color: blue;
+  font-family: 'Questrial', sans-serif;
 }
 
-#left-questions {
-	display: inline-block;
-  margin-left: 20px;
-  width: 45%;
+#live-config{
+  background-color: #7FA1FF;
+  color: #04102F;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 36px;
 }
-
-#left-questions div {
-  height: 25px;
-  content: " ";
-  clear: both;
-}
-
-.input {
-  float: right;
-}
-
-#loaders {
-  display: inline-block;
-  margin-left: 160px;
-}
-
-#unused-loaders,
-#using-loaders {
-  border: 1px solid red;
-  width: 150px;
-  height: 160px;
-  display: inline-block;
-}
-
-
-
-#add-remove-buttons {
-  display: inline-block;
-}
-
-#add-remove-buttons button:first-child {
-  margin-bottom: 50px;
-}
-
-.unloaded-items {
-  margin: 3px;
-  padding: 3px;
-}
-
-ul {
-  list-style: none;
-  text-align: center;
-  padding-left: 0;
-}
-
-#objView {
-  height: 500px;
-  margin: 40px 20px;
-  width: 50%;
-  display: inline-block;
-}
-#code-box {
-  border: 1px solid blue;
-  height: 500px;
-}
-
-#dependencies {
-  display: inline-block;
-  height: 500px;
-  width: 25%;
-  margin-left: 30px;
-}
-#dependecies-box {
-  border: 1px solid green;
-  height: 260px;
-}
-
-
-
-
-

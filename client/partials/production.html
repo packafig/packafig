@@ -1,60 +1,162 @@
-
-<div id="left-questions">
-<form>
-    <div>
-      <label>{{questions[0]}}</label>
-      <input type="text" class="input" ng-model="options.entry"/>
+<!DOCTYPE html>
+<div class="container-fluid">
+  <div class="row">
+    <div class="container col-sm-6 col-md-6 col-lg-6">
+      <div class="row">
+        <div class="form-group">
+          <label class="col-sm-6 col-md-6 col-lg-6 control-label" for="entry">{{questions[0]}}</label>
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            <input id="entry" name="textinput" type="text" placeholder="Entry Filename" class="form-control input-md" ng-model="options.entry">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-sm-6 col-md-6 col-lg-6 control-label" for="textinput">{{questions[1]}}</label>
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            <input id="output-path" name="textinput" type="text" placeholder="Output Path" class="form-control input-md" ng-model="options.filepath">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-sm-6 col-md-6 col-lg-6 control-label" for="textinput">{{questions[2]}}</label>
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            <input id="output-filename" name="textinput" type="text" placeholder="Output Filename" class="form-control input-md" ng-model="options.filename">
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      <label>{{questions[1]}}</label>
-      <input type="text" class="input" ng-model="options.fileName"/>
+
+    <div class="container col-sm-6 col-md-6 col-lg-6">
+      <div id="loader-selections">
+        <div class="col-sm-6 col-md-6 col-lg-6" id="loader-list">
+          <select size="10" id="loaders" multiple class="form-control">
+            <option value="css">
+              CSS
+            </option>
+            <option value="sass">
+              SASS
+            </option>
+            <option value="json">
+              JSON
+            </option>
+            <option value="es6">
+              ES6
+            </option>
+            <option value="react">
+              React
+            </option>
+            <option value="babel">
+              Babel
+            </option>
+            <option value="jade">
+              Jade
+            </option>
+            <option value="mustache">
+              Mustache
+            </option>
+            <option value="handlebars">
+              Handlebars
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
-    <div>
-      <label>{{questions[2]}}</label>
-      <input type="text" class="input" ng-model="options.fileOutput"/>
+  </div>
+
+  <div class="col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-sm-8 col-md-8 col-lg-8" id="live-config">
+    <div class="row" id="row1">
+      <div class="col-sm-2 col-md-2 col-lg-2"></div>
+      <div> module.exports: { </div>
     </div>
-</form>
-</div>
-
-<div id="loaders">
-  <div id='unused-loaders'>
-    <ul id="selectable">
-      <li ng-repeat='loader in loaders' class="unloaded-items">
-        {{loader}}
-      </li>
-    </ul>
-  </div>
-  <div id="add-remove-buttons">
-    <button>Add</button>
-    <br>
-    <button>Remove</button>
-  </div>
-  <div id='using-loaders'>   
-  </div>
-</div>
-
-<div id=objView>
-  <h3>Export Code</h3>
-  <div id="code-box">
-  <p>module.exports = {
-  <br>
-  entry: '{{options.entry}}',
-  <br>
-  output: {
-  <br>
-    filename: '{{options.fileName}}',
-    <br>
-    path: '{{options.fileOutput}}'
-    <br>
-  }
-}
-</p>
-  </div>
-</div>
-
-<div id="dependencies">
-  <h3>Dependecies you need to Install</h3>
-  <div id='dependecies-box'>
-    
+    <div class="row" id="row2">
+      <div class="col-sm-3 col-md-3 col-lg-3"></div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        entry:
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <p>'{{ options.entry }}',</p>
+      </div>
+    </div>
+    <div class="row" id="row3">
+      <div class="col-sm-3 col-md-3 col-lg-3"></div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        output: {
+        </div>
+    </div>
+    <div class="row" id="row4">
+      <div class="col-sm-4 col-md-4 col-lg-4"></div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        path:
+      </div>
+      <div>
+        {{ options.filepath }},
+      </div>
+    </div>
+    <div class="row" id="row5">
+      <div class="col-sm-4 col-md-4 col-lg-4"></div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        filename:
+      </div>
+      <div>
+        '{{ options.filename }}',
+      </div>
+    </div>
+    <div class="row" id="row6">
+      <div class="col-sm-3 col-md-3 col-lg-3"></div>
+        <div class="col-sm-1 col-md-1 col-lg-1">
+          },
+        </div>
+    </div>
+    <div class="row" id="row7">
+      <div class="col-sm-3 col-md-3 col-lg-3"></div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        module: {
+      </div>
+    </div>
+    <div class="row" id="row8">
+      <div class="col-sm-4 col-md-4 col-lg-4"></div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        loaders: [
+      </div>
+    </div>
+    <div class="row" id="row9">
+      <div class="col-sm-5 col-md-5 col-lg-5"></div>
+      <div>
+        {
+        </div>
+      </div>
+    <div class="row" id="row10">
+      <div class="col-sm-6 col-md-6 col-lg-6"></div>
+      <div>
+        test: /\.css$/, loader: 'style!css',
+      </div>
+    </div>
+    <div class="row" id="row11">
+      <div class="col-sm-5 col-md-5 col-lg-5"></div>
+      <div>
+        },
+      </div>
+    </div>
+    <div class="row" id="row12">
+      <div class="col-sm-5 col-md-5 col-lg-5"></div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        ],
+      </div>
+    </div>
+    <div class="row" id="row13">
+      <div class="col-sm-4 col-md-4 col-lg-4"></div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        },
+      </div>
+    </div>
+    <div class="row" id="row14">
+      <div class="col-sm-3 col-md-3 col-lg-3"></div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        };
+      </div>
+    </div>
   </div>
 </div>
