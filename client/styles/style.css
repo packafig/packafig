@@ -18,3 +18,7 @@ body {
   font-weight: bold;
   border-radius: 36px;
 }
+
+#download {
+  display: block;
+}
