@@ -3,15 +3,15 @@
 <form>
     <div>
       <label>{{questions[0]}}</label>
-      <input type="text" class="input" ng-model="options.entry"/>
+      <input type="text" class="input" id="entry" ng-model="options.entry"/>
     </div>
     <div>
       <label>{{questions[1]}}</label>
-      <input type="text" class="input" ng-model="options.fileName"/>
+      <input type="text" class="input" id="fileName" ng-model="options.fileName"/>
     </div>
     <div>
       <label>{{questions[2]}}</label>
-      <input type="text" class="input" ng-model="options.fileOutput"/>
+      <input type="text" class="input" id="fileOutput" ng-model="options.fileOutput"/>
     </div>
 </form>
 </div>
@@ -25,7 +25,7 @@
     </ul>
   </div>
   <div id="add-remove-buttons">
-    <button>Add</button>
+    <button id="add">Add</button>
     <br>
     <button>Remove</button>
   </div>
@@ -49,6 +49,7 @@
   }
 }
 </p>
+
   </div>
 </div>
 
@@ -58,3 +59,5 @@
     
   </div>
 </div>
+<button id="download" ng-click="makeFile()">Download File</button>
+<a href='data.js' download>download</a>

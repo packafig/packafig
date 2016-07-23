@@ -13,11 +13,24 @@ app.config(function($routeProvider) {
 });
 
 
-app.controller('questionsController', function($scope) {
+app.controller('questionsController', function($scope, $http) {
     $scope.options = {
-        entries: "",
+        entry: "",
         fileName: "",
         fileOutput: ""
+    }
+    $scope.makeFile = function() {
+        console.log('firing')
+        var info = {
+            entry: $scope.options.entry,
+            output: {
+                path: $scope.options.fileOutput,
+                filename: $scope.options.fileName
+            }
+        }
+        $http.post('/', JSON.stringify(info));
+
+
     }
     $scope.loaders = ["sourceMap", "minimize", "debug", "webpack", "target"];
     $scope.questions = [
@@ -26,5 +39,7 @@ app.controller('questionsController', function($scope) {
         "Where in your directory sould the file output to?"
     ];
 });
+
+
 
 
