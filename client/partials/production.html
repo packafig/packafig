@@ -1,3 +1,60 @@
-<h1>Production</h1>
 
-<p>{{message}}</p>
+<div id="left-questions">
+<form>
+    <div>
+      <label>{{questions[0]}}</label>
+      <input type="text" class="input" ng-model="options.entry"/>
+    </div>
+    <div>
+      <label>{{questions[1]}}</label>
+      <input type="text" class="input" ng-model="options.fileName"/>
+    </div>
+    <div>
+      <label>{{questions[2]}}</label>
+      <input type="text" class="input" ng-model="options.fileOutput"/>
+    </div>
+</form>
+</div>
+
+<div id="loaders">
+  <div id='unused-loaders'>
+    <ul id="selectable">
+      <li ng-repeat='loader in loaders' class="unloaded-items">
+        {{loader}}
+      </li>
+    </ul>
+  </div>
+  <div id="add-remove-buttons">
+    <button>Add</button>
+    <br>
+    <button>Remove</button>
+  </div>
+  <div id='using-loaders'>   
+  </div>
+</div>
+
+<div id=objView>
+  <h3>Export Code</h3>
+  <div id="code-box">
+  <p>module.exports = {
+  <br>
+  entry: '{{options.entry}}',
+  <br>
+  output: {
+  <br>
+    filename: '{{options.fileName}}',
+    <br>
+    path: '{{options.fileOutput}}'
+    <br>
+  }
+}
+</p>
+  </div>
+</div>
+
+<div id="dependencies">
+  <h3>Dependecies you need to Install</h3>
+  <div id='dependecies-box'>
+    
+  </div>
+</div>
