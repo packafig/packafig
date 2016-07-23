@@ -26,38 +26,24 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="row">
+          <br />
+          <br />
+        </div>
+        <div id="dl-buttons">
+          <button class="btn btn-default" id="save" ng-click="makeFile()"><span class="glyphicon glyphicon-floppy-disk"></span>  Click to commit options</button>
+          <a href="data.js" class="btn btn-default" role="button" download><span class="glyphicon glyphicon-cloud-download"></span>  Download</a>
+        </div>
+      </div>
     </div>
-
     <div class="container col-sm-6 col-md-6 col-lg-6">
+      <div class="container col-sm-2 col-md-2 col-lg-2"> </div>
       <div id="loader-selections">
         <div class="col-sm-6 col-md-6 col-lg-6" id="loader-list">
           <select size="10" id="loaders" multiple class="form-control">
-            <option value="css">
-              CSS
-            </option>
-            <option value="sass">
-              SASS
-            </option>
-            <option value="json">
-              JSON
-            </option>
-            <option value="es6">
-              ES6
-            </option>
-            <option value="react">
-              React
-            </option>
-            <option value="babel">
-              Babel
-            </option>
-            <option value="jade">
-              Jade
-            </option>
-            <option value="mustache">
-              Mustache
-            </option>
-            <option value="handlebars">
-              Handlebars
+            <option ng-repeat="loader in loaders">
+              {{loader}}
             </option>
           </select>
         </div>
@@ -160,6 +146,3 @@
     </div>
   </div>
 </div>
-
-  <button class="btn btn-default" id="save" ng-click="makeFile()"><span class="glyphicon glyphicon-floppy-disk"></span>Click to commit options</button>
-  <a href="data.js" class="btn btn-default" role="button" download><span class="glyphicon glyphicon-cloud-download"></span> Download</a>

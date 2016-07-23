@@ -1,4 +1,4 @@
-const loaders = {
+const loaderList = {
   json: {
     loader: 'json-loader',
     npm: 'npm install --save json-loader',
@@ -31,6 +31,4 @@ const loaders = {
   },
 };
 
-loaderNames = Object.keys(loaders);
-
-module.exports(loaders, loaderNames);
+const loaderNames = Object.keys(loaders);
