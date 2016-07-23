@@ -10,6 +10,14 @@
   <script type="text/javascript" src="./controllers/questionsController.js"></script>
 
   <script type="text/javascript" src="app.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    console.log("hello");
+    $( "#selectable" ).selectable();
+  } );
+  </script>
 
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
    <link rel="stylesheet" href="styles/style.css">
@@ -21,6 +29,5 @@
     <div ng-view>
     </div>
   </div>
-  
 </body>
 </html>
