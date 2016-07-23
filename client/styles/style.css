@@ -75,7 +75,9 @@ ul {
   height: 260px;
 }
 
-
+#download {
+  display: block;
+}
 
 
 
