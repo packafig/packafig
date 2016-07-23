@@ -1,10 +1,17 @@
 @import 'https://fonts.googleapis.com/css?family=Questrial';
 
 body {
+  margin-left: 20px;
   font-family: 'Questrial', sans-serif;
 }
 
+#main-logo {
+  height: 80%;
+}
+
 #live-config{
+  margin-top: 20px;
+  padding-top: 10px;
   background-color: #7FA1FF;
   color: #04102F;
   font-size: large;
