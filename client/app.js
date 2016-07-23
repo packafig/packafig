@@ -12,9 +12,9 @@ app.config(function($routeProvider) {
 
 app.controller('questionsController', function($scope) {
   $scope.options = {
-    entry: 'entry file here',
-    filename: 'desired filename here',
-    filepath: 'desired file path here',
+    entry: '',
+    filename: '',
+    filepath: '',
   }
   $scope.loaders = ['sourceMap', 'minimize', 'debug', 'webpack', 'target'];
   $scope.questions = [
