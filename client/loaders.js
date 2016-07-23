@@ -1,4 +1,4 @@
-const loaders = {
+const loaderList = {
   json: {
     loader: 'json-loader',
     npm: 'npm install --save json-loader',
@@ -30,3 +30,5 @@ const loaders = {
     regEx: '/\.elm$/',
   },
 };
+
+const loaderNames = Object.keys(loaders);

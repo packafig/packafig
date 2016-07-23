@@ -22,3 +22,8 @@ body {
 #download {
   display: block;
 }
+
+#dl-buttons {
+  margin-top: 20px;
+  margin: 0 auto;
+}
