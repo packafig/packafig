@@ -1,4 +1,4 @@
-const angular = require('angular');
+// const angular = require('angular');
 
 const app = angular.module('packafig', ['ngRoute']);
 
@@ -11,15 +11,15 @@ app.config(function($routeProvider) {
 });
 
 app.controller('questionsController', function($scope) {
-    $scope.options = {
-        entries: '',
-        fileName: '',
-        fileOutput: ''
-    }
-    $scope.loaders = ['sourceMap', 'minimize', 'debug', 'webpack', 'target'];
-    $scope.questions = [
-        'Enter the entry point',
-        'What do you want to name the output file?',
-        'Where in your directory should the file output to?',
-    ];
+  $scope.options = {
+    entry: 'entry file here',
+    filename: 'desired filename here',
+    filepath: 'desired file path here',
+  }
+  $scope.loaders = ['sourceMap', 'minimize', 'debug', 'webpack', 'target'];
+  $scope.questions = [
+    'What is your entry file?',
+    'Define the path for your file output:',
+    'What do you want to name the output file?',
+  ];
 });
