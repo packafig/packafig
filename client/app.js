@@ -1,24 +1,26 @@
-const angular = require('angular');
+// const angular = require('angular');
 
-const app = angular
-  .module('myApp', [
-    'ngRoute',
-    'HomeController',
-  ]);
+const app = angular.module('packafig', ['ngRoute'])
 
-function configFunction($routeProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: './partials/home.html',
-      controller: 'HomeController',
-    });
-}
 
-app.config(configFunction);
+app.config(function($routeProvider) {
+    $routeProvider
 
-angular.module('coolName', [])
-
-.controller('AppController', () => {
-  this.entry;
-  this.output;
+        // route for the home page
+        .when('/', {
+            templateUrl: './partials/production.html',
+            controller: 'questionsController'
+        });
 });
+
+
+app.controller('questionsController', function($scope) {
+    $scope.message = "hello";
+    $scope.questions = [
+        "Will you have more than one entry point?",
+        //if no
+        "Enter the entry point"
+    ];
+});
+
+
