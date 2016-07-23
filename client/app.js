@@ -11,10 +11,15 @@ app.config(function($routeProvider) {
 });
 
 app.controller('questionsController', function($scope) {
-  $scope.message = 'hello';
-  $scope.questions = [
-    'Will you have more than one entry point?',
-    //if no
-    'Enter the entry point',
-  ];
+    $scope.options = {
+        entries: '',
+        fileName: '',
+        fileOutput: ''
+    }
+    $scope.loaders = ['sourceMap', 'minimize', 'debug', 'webpack', 'target'];
+    $scope.questions = [
+        'Enter the entry point',
+        'What do you want to name the output file?',
+        'Where in your directory should the file output to?',
+    ];
 });
