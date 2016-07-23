@@ -5,7 +5,6 @@ const app = angular.module('packafig', ['ngRoute'])
 
 app.config(function($routeProvider) {
     $routeProvider
-
         // route for the home page
         .when('/', {
             templateUrl: './partials/production.html',
@@ -15,11 +14,16 @@ app.config(function($routeProvider) {
 
 
 app.controller('questionsController', function($scope) {
-    $scope.message = "hello";
+    $scope.options = {
+        entries: "",
+        fileName: "",
+        fileOutput: ""
+    }
+    $scope.loaders = ["sourceMap", "minimize", "debug", "webpack", "target"];
     $scope.questions = [
-        "Will you have more than one entry point?",
-        //if no
-        "Enter the entry point"
+        "Enter the entry point",
+        "What's the output file's name?",
+        "Where in your directory sould the file output to?"
     ];
 });
 
